@@ -6,9 +6,11 @@ const getClosestNumberToZero = (numbers) => {
       return Math.max(closestNumberToZero, currentNumber);
     }
 
-    return Math.abs(currentNumber) < Math.abs(closestNumberToZero)
-      ? currentNumber
-      : closestNumberToZero;
+    if (Math.abs(currentNumber) < Math.abs(closestNumberToZero)) {
+      return currentNumber;
+    }
+
+    return closestNumberToZero;
   });
 };
 
